@@ -95,7 +95,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
 // Reconnect to the MQTT broker
 void reconnect() {
   while (!client.connected()) {
-    if (client.connect("ESP32Client")) {
+    if (client.connect(esp32Name)) {
       Serial.println("Connected to MQTT broker");
       client.subscribe(mqtt_topic);
     } else {
